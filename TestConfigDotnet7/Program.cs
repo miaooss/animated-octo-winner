@@ -23,7 +23,11 @@ if(myCustomObjectSettings == null)
     throw new Exception("should work!");
 }
 
-for(int i = 0; i < myCustomObjectSettings.Count; i++)
+// myCustomObjectSettings.Count is equals to 1 and it ignores the wrongs values from `breaking_appsettings.json`
+
+Console.WriteLine($"myCustomObjectSettings.Count: {myCustomObjectSettings.Count}");
+
+for (int i = 0; i < myCustomObjectSettings.Count; i++)
 {
     var setting = myCustomObjectSettings[i];
     Console.WriteLine($"idx: {i} Settings found: {setting?.MyProperty}");
